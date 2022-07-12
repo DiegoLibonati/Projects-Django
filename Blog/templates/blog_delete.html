@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} Delete Post {% endblock %}
+
+{% block link %} <link href="{% static 'css/blog_delete.css' %}" rel='stylesheet'> {% endblock %}
+
+{% block content %}
+
+<main class="main_container">
+
+  <section class="delete_container">
+
+    <form method="POST">
+      {% csrf_token %} 
+
+      <h2>Are you sure you want to delete {{object}} post?</h2>
+
+      <button type="submit">Delete</button>
+    </form>
+    
+  <section>
+
+</main>
+
+{% endblock %}

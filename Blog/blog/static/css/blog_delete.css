@@ -1,0 +1,45 @@
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.delete_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: calc(100vh - 7rem);
+}
+
+.delete_container form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
+    height: 20rem;
+    width: 25rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.delete_container form h2{
+    font-size: 1.5rem;
+    color:#788BFF;
+    text-align: center;
+}
+
+.delete_container form button{
+    height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    background-color: #788BFF;
+    letter-spacing: .2rem;
+    width: 20rem;
+    cursor: pointer;
+}

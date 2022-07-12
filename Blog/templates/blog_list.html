@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} Posts {% endblock %}
+
+{% block link %} <link href="{% static 'css/blog_list.css' %}" rel='stylesheet'> {% endblock %}
+
+{% block content %}
+
+<main class="main_container">
+
+  {% if postslen == 0 %}
+    <h1>THERE ARE NO POSTS</h1>
+  {% else %}
+    <h1>POSTS</h1>
+  {% endif %}
+
+  <section class="post_list_container">
+
+
+    {% for post in posts %}
+
+    <article class="post_container">
+      <h2 class="post_container_title">{{post.title}}</h2>
+
+      <div class="post_container_actions">
+        <a href="{% url 'blog:detail' post.id %}">See</a>
+        <a href="{% url 'blog:update' post.id %}">Update</a>
+        <a href="{% url 'blog:delete' post.id %}">Delete</a>
+      </div>
+    </article>
+
+    {% endfor %}
+
+
+  <section>
+
+</main>
+
+{% endblock %}

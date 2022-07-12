@@ -1,0 +1,84 @@
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.create_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: calc(100vh - 7rem);
+}
+
+.create_container form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    height: 45rem;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.create_container form input{
+    height: 5rem;
+    width: 25rem;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    border-left: .3rem solid #788BFF;
+    border-radius: 1rem;
+}
+
+.create_container form textarea{
+    resize: none;
+    height: 25rem;
+    width: 25rem;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    border-left: .3rem solid #788BFF;
+    border-radius: 1rem;
+}
+
+.create_container form button{
+    height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    background-color: #788BFF;
+    letter-spacing: .2rem;
+    width: 25rem;
+}
+
+@media only screen and (min-width: 540px){
+
+    .create_container form{
+        height: 50rem;
+        width: 50rem;
+    }
+
+    .create_container form input{
+        height: 6rem;
+        width: 40rem;
+    }
+    
+    .create_container form textarea{
+        height: 30rem;
+        width: 40rem;
+    }
+    
+    .create_container form button{
+        height: 6rem;
+        width: 40rem;
+    }
+}

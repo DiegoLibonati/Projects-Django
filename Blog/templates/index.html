@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block link %} <link href="{% static 'css/home.css' %}" rel='stylesheet'> {% endblock %}
+
+{% block content %}
+
+<main class="main_container">
+
+  <section class="home_container">
+
+    <a href="{% url 'blog:home' %}">What are you thinking?</a>
+
+  </section>
+
+</main>
+
+
+{% endblock %}

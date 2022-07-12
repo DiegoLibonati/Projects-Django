@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} Create Post {% endblock %}
+
+{% block link %} <link href="{% static 'css/blog_create.css' %}" rel='stylesheet'> {% endblock %}
+
+{% block content %}
+
+<main class="main_container">
+
+  <section class="create_container">
+
+    <form method="POST">
+      {% csrf_token %} 
+
+      <input name="title" placeholder="Set your Title" value={{form.title.value}}>
+      <textarea placeholder="Describe yourself here..." name="content" value={{form.content}}></textarea>
+
+      <button type="submit">Update</button>
+
+    </form>
+    
+  <section>
+
+</main>
+
+{% endblock %}

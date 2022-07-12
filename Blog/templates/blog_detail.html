@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block link %} <link href="{% static 'css/blog_detail.css' %}" rel='stylesheet'> {% endblock %}
+
+{% block content %}
+
+<main class="main_container">
+
+  <section class="post_container">
+
+    <article class="post_article">
+      <h1>{{post.title}}</h1>
+
+      {% if post_len > 100 %}
+        <p id="text">{{postwithoutreadmore}}</p>
+        <button id="readMore" class="readMore">Read More</button>
+      {% else %}
+        <p>{{completepost}}</p>
+      {% endif %}
+
+    </article>
+
+  <section>
+</main>
+
+{% endblock %}
+
+
+{% block js %} 
+
+{{ completepost|json_script:'completepost' }}
+{{ postwithoutreadmore|json_script:'postwithoutreadmore' }}
+
+<script>
+  const completeText = JSON.parse(document.getElementById('completepost').textContent)
+  const reduceText = JSON.parse(document.getElementById('postwithoutreadmore').textContent)
+</script>
+
+<script src="{% static 'js/blog_detail.js' %}"></script> 
+
+{% endblock %}

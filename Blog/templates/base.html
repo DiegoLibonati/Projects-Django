@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+
+    {% load static %}
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+
+    <link href="{% static 'css/general.css' %}" rel='stylesheet'>
+    <link href="{% static 'css/navbar.css' %}" rel='stylesheet'>
+    {% block link %} {% endblock %}
+  </head>
+  <body>
+
+    <header class="header_container">
+
+        <img class="header_container_img" src="{% static 'img/DL.png' %}" alt='Diego Libonati Logo'/>
+
+        <nav class="header_container_nav">
+            <ul class="header_container_nav_list">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog:home' %}">Blog</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog:create' %}">Create Post</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    {% block content %} {% endblock %}
+
+    {% block js %} {% endblock %}
+  </body>
+</html>
