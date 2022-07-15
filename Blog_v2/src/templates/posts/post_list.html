@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %}
+Blog list
+{% endblock title %}
+
+{% block linkcss %}    <link href="{% static 'css/post_list.css' %}" rel='stylesheet'> {% endblock linkcss %}
+
+{% block content%} 
+
+<main class="main_container">
+    <section class="cards_container">
+        {% for object in object_list %}
+        
+            <article class="card_container">
+                <img src="{{object.thumbnail.url}}" alt={{object.title}}>
+
+                <div class="card_container_information">
+                    <a href="{{object.get_absolute_url}}"><h3>{{object.title}}</h3></a>
+                    <p>{{object.content|truncatechars:15}}</p>
+
+                    <div class="card_container_information_gets">
+                        <span><i class="bi bi-eye"></i> {{object.get_view_count}}</span>
+                        <span><i class="bi bi-hand-thumbs-up"></i> {{object.get_like_count}}</span>
+                        <span><i class="bi bi-pencil"></i> {{object.get_comment_count}}</span>
+                    </div>
+
+                    <p>Publish: {{object.publish_date| timesince}} ago</p>
+
+                </div>
+            </article>
+
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock content %}

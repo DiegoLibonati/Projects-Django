@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %}
+{{ view_type }}
+{% endblock title %}
+
+{% block linkcss %}    <link href="{% static 'css/post_form.css' %}" rel='stylesheet'> {% endblock linkcss %}
+
+{% block content%} 
+
+    <div class="form_container">
+        <h1>Esta es la vista: {{ view_type }}</h1>
+
+        <form method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit">{{ view_type|title }}</button>
+        </form>
+    </div>
+
+{% endblock content %}

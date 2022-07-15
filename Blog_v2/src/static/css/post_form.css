@@ -1,0 +1,79 @@
+.form_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: auto;
+}
+
+.form_container h1{
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.form_container form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column wrap;
+    padding: 1rem;
+    height: auto;
+    width: calc(100% - 2rem);
+    background-color: #0CCE6B;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.form_container form p{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: auto;
+    margin-bottom: 3rem;
+}
+
+.form_container p label{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.form_container p input{
+    width: 100%;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: .2rem solid #fff;
+}
+
+.form_container p textarea{
+    resize: none;
+    width: 100%;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: .2rem solid #fff;
+}
+
+.form_container button{
+    width: 100%;
+    border-radius:1rem ;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+@media only screen and (min-width:540px) {
+    .form_container form{
+        width: 50rem;
+    }
+}

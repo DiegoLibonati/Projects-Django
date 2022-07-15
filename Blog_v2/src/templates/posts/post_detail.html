@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock title %}
+
+{% block linkcss %}    <link href="{% static 'css/post_detail.css' %}" rel='stylesheet'> {% endblock linkcss %}
+
+{% block content%} 
+
+<main class="main_container">
+
+    <section class="cards_container">
+
+        <article class="card_container">
+            <h3>{{object.title}}</h3>
+            <img src="{{object.thumbnail.url}}" alt={{object.title}}>
+
+            <div class="card_container_information">
+                <p>{{object.content}}</p>
+
+                <div class="card_container_information_gets">
+                    <span><i class="bi bi-eye"></i> {{object.get_view_count}}</span>
+                    <span><i class="bi bi-hand-thumbs-up"></i> {{object.get_like_count}}</span>
+                    <span><i class="bi bi-pencil"></i> {{object.get_comment_count}}</span>
+                </div>
+
+                <p>Publish: {{object.publish_date| timesince}} ago</p>
+
+            </div>
+
+        </article>
+
+        <article class="card_container_actions">
+            <span><a href="{{object.get_like_url}}"><i class="bi bi-hand-thumbs-up"></i></a> {{object.get_like_count}}</span>
+            <a href="{{object.get_edit_url}}">Edit</a>
+            <a href="{{object.get_delete_url}}">Delete</a>
+        </article>
+
+    </section>
+
+    <section class="card_container_comments">
+        {% if request.user.is_authenticated %}
+        <article class="card_container_comments_form">
+            <h4> Leave a comment </h4>
+            <form method="POST">
+                {% csrf_token %}
+    
+                {{form}}
+    
+                <button type="submit">Comment</button>
+            </form>
+        </article>
+
+    <h5> Comments: </h5>
+        {% for comment in object.comments %}
+            <article class="card_container_comment">
+                <p> Owner: {{comment}} </p>
+                <p> Say: {{comment.content}}</p>
+                <p>{{comment.timestamp|timesince}} ago</p>
+            </article>
+        {% endfor %}
+        {% else %}
+            <a href="{% url 'account_login' %}">Login to comment</a>
+        {% endif %}
+    </section>
+
+</main>
+
+{% endblock content %}

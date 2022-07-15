@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    {% load static %}
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %}</title>
+
+    <link href="{% static 'css/general.css' %}" rel='stylesheet'>
+    <link href="{% static 'css/navbar.css' %}" rel='stylesheet'>
+
+    {% block linkcss %} {% endblock linkcss %}
+  </head>
+  <body>
+
+    <header class="header_container">
+      <img src="{% static 'imgs/DL.png' %}" alt="DL LOGO">
+
+      <nav class="header_container_nav">
+        <a href="{% url 'list' %}">Home</a> 
+        <a href="{% url 'create' %}">Create</a> 
+      </nav>
+    </header>
+
+    {% block content %} {% endblock content %}
+  </body>
+</html>

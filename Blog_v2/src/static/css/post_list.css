@@ -1,0 +1,103 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css");
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.cards_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 90%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.card_container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.card_container img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.card_container_information{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 30rem;
+    background-color: #0CCE6B;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: .5rem;
+}
+
+.card_container_information a{
+    text-decoration: none;
+}
+
+.card_container_information a h3{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.card_container_information p{
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.card_container_information_gets{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    width: 100%;
+    height: auto;
+}
+
+.card_container_information_gets span{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.card_container_information_gets span i{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width:540px){
+    .card_container{
+        width: 50rem;
+    }
+}
+
+@media only screen and (min-width:1024px){
+
+    .cards_container{
+        justify-content: flex-start;
+        flex-flow: row wrap;
+    }
+
+    .card_container{
+        width: 40rem;
+        margin: 1rem;
+    }
+}

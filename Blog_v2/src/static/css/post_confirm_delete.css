@@ -1,0 +1,24 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: auto;
+}
+
+div h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+div form button{
+    width: 100%;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    color: #fff;
+    background-color: #0CCE6B;
+}

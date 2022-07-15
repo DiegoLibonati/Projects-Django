@@ -1,0 +1,33 @@
+.header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 7rem;
+    background-color: #0CCE6B;
+}
+
+.header_container img{
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+}
+
+.header_container_nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    position: absolute;
+    height: 6rem;
+}
+
+.header_container_nav a {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #fff;
+}
